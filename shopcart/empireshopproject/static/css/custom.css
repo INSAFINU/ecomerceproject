@@ -1,0 +1,166 @@
+body{
+    font-family: 'Roboto Slab', serif;
+
+}
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200&display=swap" rel="stylesheet">
+
+/***Navbar ***/
+
+/* Styling for navigation items */
+.nav-item {
+    letter-spacing: 0.2em;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+/* Styling for dropdown items */
+.dropdown-item {
+    letter-spacing: 0.2em;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+/* Styling for the footer */
+/* Base styles for the footer */
+
+/* Flex container to manage layout */
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the container takes up at least the full viewport height */
+}
+
+/* Paginator styles */
+.paginator-container {
+    margin-bottom: 20px;
+}
+
+.paginator-container hr {
+    margin-bottom: 10px;
+}
+
+.paginator-container .text-center {
+    margin-bottom: 10px;
+}
+
+/* Footer styles */
+.my_footer {
+    margin-top: auto; /* Push the footer to the bottom of the container */
+    background-color: aqua;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+
+/* Assuming you want to use the 'Roboto' font */
+.card-body {
+  font-family: '#000000', sans-serif;
+}
+/* Assuming you want to use the 'Roboto' font for the heading */
+.card-body h4 {
+  font-family: '#000000', sans-serif;
+}
+
+/* Assuming you want to use a different font for the paragraph */
+.card-body p {
+  font-family: '#000000', sans-serif;
+}
+
+
+/*** ctegorypage ***/
+.my_row_class{
+padding-top:15px;
+
+}
+.my_row_class.mx_auto{
+color:#000;
+font-size:12px;
+}
+.my_image
+{
+width:100%;
+height:auto;
+
+}
+.my_title
+{
+font-size:16px;
+text_transform:uppercase;
+letter-spacing:.2em;
+}
+.my_image_padding{
+padding:5px;
+}
+.my_bottom_margin{
+margin-bottom:10px;
+}
+.card-body h4
+{
+font-size:14px;
+text_transform:uppercase;
+letter-spacing:.2em;
+}
+
+
+/***product page ***/
+
+
+
+.my_prod_row_class
+{
+    padding-top:15px;
+    padding-bottom:20px;
+}
+.my_prod_row_class .mx-auto
+{
+    color:#000;
+    font-size:12px;
+    text-decoration:none;
+}
+.my_prod_title{
+    font-size:16px;
+    text_transform:uppercase;
+    letter-spacing:.2em;
+    padding-top:15px;
+    padding-bottom:10px;
+}
+.my_prod_title
+{
+    padding-right:20px;
+}
+.my_search_text
+{
+    padding-top:20px;
+}
+/***  cart page***/
+.my_custom_table  {
+    min-width:400px;
+    font-size:15px;
+}
+.my_custom_thead{
+    font-weight:normal;
+    text_transform:uppercase;
+    letter-spacing:.2em;
+    background-color:#f8f8fa!important;
+ }
+ .custom_a{
+    text-decoration:none;
+ }
+ .custom_icon{
+     text-decoration:none;
+    color:#868e96 !important;
+ }
+ .my_custom_button{
+    margin-top:5px;
+
+ }
+.card {
+        min-width: 18rem;
+        /* Add other styles as needed */
+    }
+
+
+

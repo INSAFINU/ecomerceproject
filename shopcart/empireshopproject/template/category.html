@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block metadescription %}
+    {% if category %}
+            {{ category.description|truncatewords:155 }}
+    {% else %}
+            Welcome To Empire Electronics Where You can Buy Different items....
+    {% endif %}
+{% endblock %}
+{% block title %}
+{% if Category %}
+    {{ category.name }} - Empire Electronics
+    {% else %}
+        See Our New Collections -Empire Electronics
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    {% if category %}
+        <div class="row my_row_class">
+            <div class="mx-auto">
+                <!-- Add any category-specific content here -->
+            </div>
+        </div>
+        <div>
+            <p><a href="{% url 'empireshopapp:allProdCat' %}">Our Product Collections</a></p>
+        </div>
+        {% if category.image %}
+            <div class="mx-auto">
+                <img class="my_image" src="{{ category.image.url }}" alt="{{ category.name }}" style="width:100" height="100">
+            </div>
+        {% else %}
+            <p>No image available for this category.</p>
+        {% endif %}
+        <br>
+        <div>
+            <h1 class="text-center my_title">{{ category.name }}</h1>
+            <p class="text-justify">{{ category.description }}</p>
+        </div>
+    {% else %}
+        <div>
+            <img class="my_image my_image_padding" src="{% static 'img/empire banner.png' %}" alt="Our Products">
+        </div>
+        <div>
+            <h1 class="text-center my_title"><b>Our Product Collection</b></h1>
+            <p class="text-justify"><b>Hello, it's our product collection description.</b></p>
+        </div>
+    {% endif %}
+
+    <div class="container">
+        <div class="row mx-auto">
+            {% for product in products %}
+                <div class="my_bottom_margin col-9 col-sm-12 col-md-4 col-lg-4" >
+                    <div class="card text-center " style="min-width:18rem; " >
+                        <div>
+                            {% if product.image %}
+                                <a href="{{ product.get_url }}"><img class="product-image" style="width:100%; height:350px;" src="{{ product.image.url }}" alt="{{ product.name }}"></a>
+                            {% else %}
+                                <p>No image available for Product {{ product.name }}.</p>
+                            {% endif %}
+                        </div>
+                        <div class="card-body">
+                             <h4 >{{ product.name }}</h4>
+                           <p>{{ product.price }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% empty %}
+                <div class="col-12">
+                    <p>No products available.</p>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="mx-auto">
+            {% if products.paginator.num_pages > 1 %}
+                <hr>
+                <div class="text-center">
+                    {% for pg in products.paginator.page_range %}
+                        <a href="?page={{ pg }}" class="btn btn-light btn-sm {% if products.number == pg %} active {% endif %}">{{ pg }}</a>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <br>
+    </div>
+{% endblock %}
